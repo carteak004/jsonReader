@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D66A4801F7A73C50077FB9B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D66A47F1F7A73C50077FB9B /* ViewController.swift */; };
+		0D66A4821F7A85720077FB9B /* html in Resources */ = {isa = PBXBuildFile; fileRef = 0D66A4811F7A85720077FB9B /* html */; };
+		0D66A4841F7A85900077FB9B /* authorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D66A4831F7A85900077FB9B /* authorViewController.swift */; };
 		137A37101F79B0DC00A48AAB /* person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A370F1F79B0DC00A48AAB /* person.swift */; };
-		137A37121F79B26400A48AAB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A37111F79B26400A48AAB /* TableViewController.swift */; };
 		137A37141F79B3DE00A48AAB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 137A37131F79B3DE00A48AAB /* TableViewCell.swift */; };
 		139E9AD71F71BFF5005A12B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 139E9AD61F71BFF5005A12B0 /* AppDelegate.swift */; };
 		139E9ADC1F71BFF5005A12B0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 139E9ADA1F71BFF5005A12B0 /* Main.storyboard */; };
@@ -17,8 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0D66A47F1F7A73C50077FB9B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0D66A4811F7A85720077FB9B /* html */ = {isa = PBXFileReference; lastKnownFileType = folder; path = html; sourceTree = "<group>"; };
+		0D66A4831F7A85900077FB9B /* authorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = authorViewController.swift; sourceTree = "<group>"; };
 		137A370F1F79B0DC00A48AAB /* person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = person.swift; sourceTree = "<group>"; };
-		137A37111F79B26400A48AAB /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		137A37131F79B3DE00A48AAB /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		139E9AD31F71BFF5005A12B0 /* jsonReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jsonReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		139E9AD61F71BFF5005A12B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,11 +62,13 @@
 		139E9AD51F71BFF5005A12B0 /* jsonReader */ = {
 			isa = PBXGroup;
 			children = (
-				139E9AD61F71BFF5005A12B0 /* AppDelegate.swift */,
+				0D66A4811F7A85720077FB9B /* html */,
 				139E9ADA1F71BFF5005A12B0 /* Main.storyboard */,
+				0D66A47F1F7A73C50077FB9B /* ViewController.swift */,
 				137A37131F79B3DE00A48AAB /* TableViewCell.swift */,
 				137A370F1F79B0DC00A48AAB /* person.swift */,
-				137A37111F79B26400A48AAB /* TableViewController.swift */,
+				0D66A4831F7A85900077FB9B /* authorViewController.swift */,
+				139E9AD61F71BFF5005A12B0 /* AppDelegate.swift */,
 				139E9ADD1F71BFF5005A12B0 /* Assets.xcassets */,
 				139E9ADF1F71BFF5005A12B0 /* LaunchScreen.storyboard */,
 				139E9AE21F71BFF5005A12B0 /* Info.plist */,
@@ -131,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				139E9AE11F71BFF5005A12B0 /* LaunchScreen.storyboard in Resources */,
+				0D66A4821F7A85720077FB9B /* html in Resources */,
 				139E9ADE1F71BFF5005A12B0 /* Assets.xcassets in Resources */,
 				139E9ADC1F71BFF5005A12B0 /* Main.storyboard in Resources */,
 			);
@@ -143,7 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				137A37121F79B26400A48AAB /* TableViewController.swift in Sources */,
+				0D66A4801F7A73C50077FB9B /* ViewController.swift in Sources */,
+				0D66A4841F7A85900077FB9B /* authorViewController.swift in Sources */,
 				137A37141F79B3DE00A48AAB /* TableViewCell.swift in Sources */,
 				137A37101F79B0DC00A48AAB /* person.swift in Sources */,
 				139E9AD71F71BFF5005A12B0 /* AppDelegate.swift in Sources */,

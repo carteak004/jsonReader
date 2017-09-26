@@ -12,7 +12,7 @@
         <!--JSON/XML Reader-->
         <scene sceneID="d8A-0g-w3p">
             <objects>
-                <viewController id="CjZ-yy-waT" customClass="TableViewController" customModule="jsonReader" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CjZ-yy-waT" customClass="ViewController" customModule="jsonReader" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HR7-Zz-cTu"/>
                         <viewControllerLayoutGuide type="bottom" id="RvH-1p-jBf"/>
@@ -28,10 +28,16 @@
                                     <segment title="JSON"/>
                                     <segment title="XML"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControl:" destination="CjZ-yy-waT" eventType="valueChanged" id="cNa-oc-w5w"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tjv-Nz-gTA">
                                 <rect key="frame" x="348" y="72" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="Z82-Kc-73b" kind="push" id="H0c-3X-ZVl"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hle-Kf-gkU">
                                 <rect key="frame" x="0.0" y="104" width="375" height="563"/>
@@ -67,15 +73,107 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="CjZ-yy-waT" id="kAV-Tk-PXL"/>
+                                    <outlet property="delegate" destination="CjZ-yy-waT" id="Tuw-8p-6NZ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="JSON/XML Reader" id="Mo2-09-Hah"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="2O0-aM-hwJ" id="fiH-9K-Gxx"/>
+                        <outlet property="tableView" destination="hle-Kf-gkU" id="Q6r-tw-EG6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lA5-c9-IdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="983.20000000000005" y="-586.05697151424295"/>
+        </scene>
+        <!--About App-->
+        <scene sceneID="vBs-cw-gt5">
+            <objects>
+                <viewController id="Z82-Kc-73b" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="34J-p1-mDh"/>
+                        <viewControllerLayoutGuide type="bottom" id="mD5-XG-9Xd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ytl-Cj-cwl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2rg-Ps-l8a">
+                                <rect key="frame" x="16" y="550" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="About Author">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hbT-eA-tEP" kind="push" id="B5y-QO-fex"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author: Kartheek Chintalapati" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7C-oN-nqd">
+                                <rect key="frame" x="16" y="408" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Version: 1.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ow7-pL-2Qv">
+                                <rect key="frame" x="16" y="458" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dtj-5t-Sa7">
+                                <rect key="frame" x="16" y="72" width="343" height="286"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">This app is a demonstration of parsing JSON and XML Data. Both data are read from two web links and parsed. The segmented control displays the selected type of data on the table view. Clicking on an cell in the table view will take the user to a detail view where more details are displayed.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="About App" id="PDX-0c-qGZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3yV-dA-qEk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="-584.25787106446785"/>
+        </scene>
+        <!--Kartheek Chintalapati-->
+        <scene sceneID="xxf-lI-LVU">
+            <objects>
+                <viewController id="hbT-eA-tEP" customClass="authorViewController" customModule="jsonReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="M32-Nb-DYp"/>
+                        <viewControllerLayoutGuide type="bottom" id="HqL-6B-jHt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="riV-Tv-UK7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dEt-yX-x0c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Kartheek Chintalapati" id="458-Wp-V9Q"/>
+                    <connections>
+                        <outlet property="webView" destination="dEt-yX-x0c" id="Z1m-Az-Zgm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n0X-T6-bGR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1741.5999999999999" y="131.78410794602701"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Quz-To-dNV">
