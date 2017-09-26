@@ -10,6 +10,8 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    var personData = [person]() //instantiate a person
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,27 @@ class TableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func fetchJsonData() {
+        //fetching person data
+        let api_url = URL(string: "http://faculty.cs.niu.edu/~krush/ios/client_list_json.txt")
+        
+        //create a URL request with the API address
+        let urlRequest = URLRequest(url: api_url!)
+        
+        //submit a response to the json data
+        let task = URLSession.shared.dataTask(with: urlRequest) {
+            (data,response,error) in
+            //if there is an error, print it and do not continue
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            //if there is no error, fetch json data
+            if let articlesJson = 
+        }
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
