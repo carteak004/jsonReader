@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, XMLParserDelegate {
 
     var personData = [person]() //instantiate a person
     
@@ -96,12 +97,70 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         task.resume()
     }
-    
+    /******************************************************************************************************/
     func fetchXmlData()
     {
+        //fetching fox news latest articles
+        let xml_url = URL(string: "http://faculty.cs.niu.edu/%7Ekrush/ios/client_list_xml.txt")
         
-    }
+        //create a URL request with the API address
+        let urlRequest = URLRequest(url: xml_url!)
+        
+        //submit a request to the Json data
+        let task = URLSession.shared.dataTask(with: urlRequest) {
+            (data,response,error) in
+            //if there is an error, print it and do not continue
+            if error != nil {
+                print(error!)
+                return
+            }//end if
+            
+            //if there is no error, fetch json formatted content
+            if let content = data {
+                do {
+                    let parser = XMLParser(data: content) as AnyObject
+                    //let jsonObject = try JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers) as AnyObject
+                    
+                    //Fetch only the articles
+                    if let clientssJson = parser["clients"] as? [[String:AnyObject]] {
+                        for item in clientssJson {
+                            if let name = item["name"] as? String, let profession = item["profession"] as? String, let dob = item["dob"] as? String, let children = item["children"] as? [String] {
+                                
+                                print("*****MARK: BEGIN*****")
+                                print(name, profession, dob, children)
+                                print("*****MARK: END*****")
+                                
+                                self.personData.append(person(name: name, profession: profession, dob: dob, children: children))
+                                
+                            }//end if
+                            
+                        }//end for loop
+                        
+                    }//end if
+                    
+                    //if you are using a table view, you would reload the data
+                    self.tableView.reloadData()
+                    
+                }//end do
+                    
+                catch {
+                    
+                    print(error)
+                    
+                }//end catch
+                
+            }//end if
+            
+        }//end getdatasession
+        
+        task.resume()
+        
+        
+        
+    }//end func
     
+    
+    /******************************************************************************************************/
     // MARK: - Table view data source
     
     func numberOfSections(in tableView: UITableView) -> Int {
