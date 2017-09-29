@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/> <!--320-->
+
+		<title>Mobile Friendly Page</title>
+
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="html/main.css" />
+		<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,600,800' type='text/css' media='all'/>
+
+		<!-- JavaScript -->
+		<script type="text/javascript" src="javascript/jQuery.all.js"></script>
+		<script type="text/javascript" src="javascript/dropDown.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				//Run code upload Page load
+				enableDropDownForIds('#userInfo, #createAccount');
+			});
+		</script>
+	</head>
+	<body>
+		<div id="titleBar" class="blue-gradiant">My Portfolio</div>
+		<img src="html/profile_pic.jpg" id="profile_pic" alt="Profile Picture"/>
+		<div id="name" class="blue-gradiant">EXPERIENCES AND INTERESTS</div>
+		<div class="experienceDetails">
+			<span class="company">TATA CONSULTANCY SERVICES</span>
+			<span class="address">Bangalore, India</span>
+			<span class="yearSpan">2014-2015</span>
+			<span class="positionTitle">ASSISTANT SYSTEM ENGINEER </span>
+			<p>PROVIDED APPLICATION SUPPORT AND AUTOMATED DAILY TASKS OF TATASKY.</p>
+		</div>
+
+
+
+
+		<hr class="width-75">
+		<div class="experienceDetails">
+
+        <span class="company">NORTHERN ILLINOIS UNVERSITY</span><span class="address">DeKalb, Illinois</span>
+			<span class="yearSpan">SPRING 2016 - CURRENT</span>
+			<span class="positionTitle">GRADUATE TEACHING ASSISTANT</span>
+		  <p>HAVING FUN LEARNING TO CODE IN SWIFT. PLANNING TO START MY CAREER AS A MOBILE APPLICATION DEVELOPER.</p>
+		</div>
+
+
+
+		<hr class="width-75">
+		<div class="experienceDetails">
+			<span class="company">NIU ACM STUDENT CHAPTER</span>
+			<span class="address">DEKALB, IL</span>
+			<span class="yearSpan">FALL 2016 - CURRENT</span>
+			<span class="positionTitle">WEB MASTER/ TUTORING CO-ORDINATOR</span>
+			<p>MAINTAINS THE CHAPTER'S OFFICIAL WEBSITE AND MAPS STUDENTS WHO ARE IN NEED OF A TUTOR TO AN APPROPRIATE TUTOR </p>
+		</div>
+		<div id="footer">
+			Designed by Steven Brice (Former student of Kai Rush). Updated for CSCI 321/521, Spring 2017 Course.
+	</div>
+	</body>
+</html>
